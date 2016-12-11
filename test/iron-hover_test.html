@@ -1,0 +1,35 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2016 Will Squire. All rights reserved.
+This code may only be used under the BSD style license found in LICENSE.txt
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>iron-hover test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../iron-hover.html">
+  </head>
+  <body>
+    <test-fixture id="basic">
+      <template>
+        <iron-hover></iron-hover>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('iron-hover', function() {
+        test('instantiating the element works', function() {
+          var element = fixture('basic');
+          assert.equal(element.is, 'iron-hover');
+        });
+      });
+    </script>
+  </body>
+</html>
