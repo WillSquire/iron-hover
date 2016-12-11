@@ -1,5 +1,7 @@
 # \<iron-hover\>
 
+Documentation and demo: http://willsquire.github.io/iron-hover/
+
 A basic and fundamental component for tracking hover state in javascript
 
 `iron-hover` is a utility element that detects the hover state of wrapped content in
