@@ -1,0 +1,43 @@
+<!--
+@license
+Copyright (c) 2016 Will Squire. All rights reserved.
+This code may only be used under the BSD style license found in LICENSE.txt
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="iron-hover-behaviour.html">
+
+<!--
+`iron-hover` is a utility element that detects the hover state of wrapped content in
+Javascript. Use this element when the hover state is actionable via Javascript opposed
+to only CSS (`:hover` styling covers this).
+
+Whilst this element provides a convenient way to detect hover state, consider
+implementing `IronHoverBehavior` on custom elements to avoid wrapping with
+this element.
+
+### Example
+
+```html
+  <iron-hover hover="{{hover}}">
+    <template is="dom-if" if="[[!hover]]">
+      Not
+    </template>
+    Hover
+  </iron-hover>
+```
+
+@demo demo/index.html
+-->
+
+<dom-module id="iron-hover">
+    <template>
+        <content></content>
+    </template>
+    <script>
+        Polymer({
+            is: 'iron-hover',
+            behaviors: [IronHoverBehavior]
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,85 @@
+<!--
+@license
+Copyright (c) 2016 Will Squire. All rights reserved.
+This code may only be used under the BSD style license found in LICENSE.txt
+-->
+
+<script>
+    /**
+     * `IronHoverBehavior` is a utility behaviour that extends an element to detect the hover
+     * state in Javascript. Inherit this behaviour when the hover state is actionable via
+     * Javascript opposed to only CSS (`:hover` styling covers this).
+     *
+     * ### Example
+     *
+     * The below example shows how to inherit IronHoverBehavior and trigger a function when
+     * `hover` changes using a complex observer:
+     *
+     * ```javascript
+     * Polymer({
+     *
+     *     is: 'example-element',
+     *
+     *     behaviors: [IronHoverBehavior],
+     *
+     *     observers: ['_hoverChanged(hover)'],
+     *
+     *     _hoverChanged: function(hover) {
+     *         // do something with hover here...
+     *     }
+     *
+     * });
+     * ```
+     *
+     * @polymerBehavior IronHoverBehavior
+     */
+    IronHoverBehavior = {
+
+        properties: {
+
+            /**
+             * Set to true if the element is currently
+             * being hovered over.
+             *
+             * @attribute hover
+             * @type Boolean
+             * @default false
+             */
+            hover: {
+                type: Boolean,
+                value: false,
+                notify: true,
+                readOnly: true,
+                reflectToAttribute: true
+            }
+        },
+
+        listeners: {
+            mouseover: '_onHover',
+            mouseleave: '_onUnHover'
+        },
+
+        /**
+         * _onHover.
+         *
+         * Sets hover to true.
+         *
+         * @private
+         */
+        _onHover: function() {
+            this._setHover(true);
+        },
+
+        /**
+         * _onUnHover.
+         *
+         * Sets hover to false.
+         *
+         * @private
+         */
+        _onUnHover: function() {
+            this._setHover(false);
+        }
+
+    };
+</script>
