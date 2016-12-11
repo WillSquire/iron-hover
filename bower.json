@@ -1,6 +1,7 @@
 {
   "name": "iron-hover",
   "description": "A basic and fundamental component for tracking hover state in javascript",
+  "keywords": ["web-components"],
   "main": "iron-hover.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0"
